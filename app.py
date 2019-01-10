@@ -4,7 +4,7 @@ __author__ = 'Borja Gete'
 __email__ = 'borjagete90@outlook.es'
 
 import os
-
+from roster.roster import *
 from pymongo import MongoClient
 
 #---------------------------------
@@ -12,7 +12,15 @@ from pymongo import MongoClient
 #---------------------------------
 
 def generate_league():
-  """Generate Random League with 16 Teams and 12 Players for each Team"""
+  """Generate Random League with 12 Players for each Team"""
+  number_teams = input("Introduce el nº de equipos a generar")
+  for team_n in range(0, number_teams):
+    #Generamos un equipo
+    for player_n in range(0, 12):
+      #Generamos un jugador
+      x = Player(1,"Prueba","Prueba","ESP",19,190,100,3,2)
+      x.generate()
+      
 
 #********************************************************************
 # Main
