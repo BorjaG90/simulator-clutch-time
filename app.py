@@ -14,32 +14,57 @@ from pymongo import MongoClient
 #---------------------------------
 def generate_league():
   """Generate Random League with 12 Players for each Team"""
+  db.players.delete_many({})
   number_teams = input("Introduce el nº de equipos a generar: ")
   for team_n in range(0, int(number_teams)):
     #Generamos un equipo
     #for player_n in range(0, 12):
     print("Generamos equipo")
       #Generamos un jugador
-    generatePlayer(1)
-    generatePlayer(1)
-    generatePlayer(2)
-    generatePlayer(2)
-    generatePlayer(3)
-    generatePlayer(3)
-    generatePlayer(4)
-    generatePlayer(4)
-    generatePlayer(5)
-    generatePlayer(5)
-    generatePlayer(int(random.randrange(1, 3, 1)))
-    generatePlayer(int(random.randrange(3, 5, 1)))
+    player = generatePlayer(1)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(1)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(2)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(2)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(3)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(3)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(4)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(4)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(5)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(5)
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(int(random.randrange(1, 3, 1)))
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
+    player = generatePlayer(int(random.randrange(3, 5, 1)))
+    pid = db.players.insert_one(player.to_db_collection())
+    print(pid.inserted_id)
     print()
 
 #********************************************************************
 # Main
 
-mongoClient_str = 'mongodb://admin:12345@ds159185.mlab.com:59185/clutch-time'
+mongoClient_str = 'mongodb://admin:admin1234@ds127376.mlab.com:27376/clutch-time'
 mongoClient = MongoClient(mongoClient_str)
-db = mongoClient.clutch_time
+db = mongoClient['clutch-time']
 
 #---------------------------------
 # Menu

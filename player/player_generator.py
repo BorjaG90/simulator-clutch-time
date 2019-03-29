@@ -19,17 +19,9 @@ def generatePlayer(pos):
     secondary = generateSecondPosition(pos)
     height = generateHeight(pos)
     weight = generateWeight(height)
-    print("{} {} de {}, {} años, {}-{} , {} cms y {} kgs".format(
-      firstname,
-      lastname, 
-      country, 
-      age, 
-      pos,
-      secondary,
-      height,
-      weight
-      )
-    )
+    player = Player(firstname,lastname,pos, secondary, age, weight, height, country)
+    print(player)
+    return player
     
 def generateSecondPosition(pos):
   up = int(random.randrange(0, 3, 1))
