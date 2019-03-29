@@ -4,7 +4,7 @@ __author__ = 'Borja Gete'
 __email__ = 'borjagete90@outlook.es'
 
 import os
-import player.player_generator
+from player.player_generator import *
 from pymongo import MongoClient
 
 
@@ -14,18 +14,30 @@ from pymongo import MongoClient
 #---------------------------------
 def generate_league():
   """Generate Random League with 12 Players for each Team"""
-  number_teams = input("Introduce el nº de equipos a generar")
-  for team_n in range(0, number_teams):
+  number_teams = input("Introduce el nº de equipos a generar: ")
+  for team_n in range(0, int(number_teams)):
     #Generamos un equipo
-    for player_n in range(0, 12):
+    #for player_n in range(0, 12):
+    print("Generamos equipo")
       #Generamos un jugador
-      generate_player()
-
+    generatePlayer(1)
+    generatePlayer(1)
+    generatePlayer(2)
+    generatePlayer(2)
+    generatePlayer(2)
+    generatePlayer(3)
+    generatePlayer(3)
+    generatePlayer(4)
+    generatePlayer(4)
+    generatePlayer(4)
+    generatePlayer(5)
+    generatePlayer(5)
+    print()
 
 #********************************************************************
 # Main
 
-mongoClient_str = 'mongodb://localhost:27017/'
+mongoClient_str = 'mongodb://admin:12345@ds159185.mlab.com:59185/clutch-time'
 mongoClient = MongoClient(mongoClient_str)
 db = mongoClient.clutch_time
 
