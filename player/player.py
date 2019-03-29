@@ -59,7 +59,8 @@ class Attributes:
     self.speed =  speed
     self.jump =  jump
     self.endurance =  endurance
-    self.strength =  strengt
+    self.strength =  strength
+
   def __str__(self):
     return "Atributos de {}".format(self.playerId)
 

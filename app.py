@@ -3,7 +3,7 @@
 __author__ = 'Borja Gete'
 __email__ = 'borjagete90@outlook.es'
 
-import os
+import os, random
 from player.player_generator import *
 from pymongo import MongoClient
 
@@ -24,14 +24,14 @@ def generate_league():
     generatePlayer(1)
     generatePlayer(2)
     generatePlayer(2)
-    generatePlayer(2)
     generatePlayer(3)
     generatePlayer(3)
     generatePlayer(4)
     generatePlayer(4)
-    generatePlayer(4)
     generatePlayer(5)
     generatePlayer(5)
+    generatePlayer(int(random.randrange(1, 3, 1)))
+    generatePlayer(int(random.randrange(3, 5, 1)))
     print()
 
 #********************************************************************
